@@ -1,6 +1,6 @@
 # Music Identifier
 ## Projeto
-Projeto desenvolvido para o curso de Tecnologias Web do @Insper, com a temática livre, mantendo especificações de utilizar alguma tecnologia web, seja voltada para o front ou para o back-end. No caso do projeto, utilizaremos do back-end para realizar requisições com algumas APIs de reconhecimento de voz, autorização da utilização do microfone pela página web e o front-end.
+Projeto desenvolvido para o curso de Tecnologias Web do <a href="https://www.insper.edu.br/en/"><b>Insper</b></a>, com a temática livre, mantendo especificações de utilizar alguma tecnologia web, seja voltada para o front ou para o back-end. No caso do projeto, utilizaremos do back-end para realizar requisições com algumas APIs de reconhecimento de voz, autorização da utilização do microfone pela página web e o front-end.
 
 ## Sobre
 Identifique alguma música de interesse utilizando o microfone do seu navegador! Nosso site permite a identificação do áudio tocado por meio da utilização de uma API chamada AudD.
