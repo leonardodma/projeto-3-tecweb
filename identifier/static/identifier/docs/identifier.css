@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;900&display=swap");
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #eefbfb;
+  min-width: 75%;
+}
+
+.appbar {
+  background-color: #12232e;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 1px 24px 0 rgba(32, 32, 32, 0.75);
+  margin-bottom: 1rem;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 15%;
+  margin: 1rem;
+}
+
+.subtitle {
+  align-self: center;
+  font-size: 1.2rem;
+  color: #eefbfb;
+}
+
+.update_button_conteiner {
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin: 0.3rem;
+  justify-content: space-evenly;
+}
+
+.button {
+  width: 200px;
+  border-radius: 10px;
+  background-color: #4da8da;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button:hover {
+  background-color: #12232e;
+  border-color: #fff;
+  transition: all 0.1s ease-in-out;
+}
