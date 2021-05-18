@@ -6,7 +6,7 @@
 
 
 ## Planejamento 
-- [] Conseguir respostas coerentes da API do shazam
-- [] Conseguir, por meio da aplicação, gravar o áudio do usuário
-- [] Obter url do vídeo do youtube da música pesquisada
-- [] FrontEnd da aplicação
+- [ ] Conseguir respostas coerentes da API do shazam
+- [ ] Conseguir, por meio da aplicação, gravar o áudio do usuário
+- [ ] Obter url do vídeo do youtube da música pesquisada
+- [ ] FrontEnd da aplicação
