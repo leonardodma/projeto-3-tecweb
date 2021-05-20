@@ -11,6 +11,8 @@ class Musics(models.Model):
     album_picture = models.CharField(max_length=200)
     spotify_link = models.CharField(max_length=200)
     apple_music_link = models.CharField(max_length=200)
+    lyrics = models.TextField()
+    deezer = models.CharField(max_length=200)
 
     def __str__(self):
         return f'{self.title}({self.artist})'

@@ -39,6 +39,7 @@ function recordAudio() {
       const audioChunks = [];
       mediaRecorder.addEventListener("dataavailable", (event) => {
         audioChunks.push(event.data);
+        console.log(event.data);
       });
 
       mediaRecorder.addEventListener("stop", () => {
@@ -60,3 +61,5 @@ function recordAudio() {
       }, 5000);
     });
 }
+
+
