@@ -25,6 +25,10 @@
       type="text/javascript"
       src="{% static 'identifier/docs/identifier.js' %}"
     ></script>
+    <script>
+        type="module"
+        src="{% static 'identifier/docs/soundModules.js' %}"
+    </script>
     {% csrf_token %}
     <script>
       const csrftoken = document.querySelector(

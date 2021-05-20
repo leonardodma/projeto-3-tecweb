@@ -8,7 +8,7 @@ body {
 }
 
 .appbar {
-  background-color: #12232e;
+  background-color: black;
   display: flex;
   flex-direction: row;
   box-shadow: 0 1px 24px 0 rgba(32, 32, 32, 0.75);
@@ -52,7 +52,7 @@ body {
 }
 
 .button:hover {
-  background-color: #12232e;
+  background-color: black;
   border-color: #fff;
   transition: all 0.1s ease-in-out;
 }
