@@ -15,6 +15,7 @@ import requests
 
 @api_view(['GET', 'POST'])
 def api_identifier(request):
+    """
     if request.method == 'POST':
         audio_query = request.data['audio-file']
         audio_blob = BytesIO(audio_query.read())
@@ -35,7 +36,7 @@ def api_identifier(request):
 
         Musics(artist=artist, title=title, album=album, release_date=release_date, genre=genre,
         album_picture=album_picture, spotify_link=spotify_link, apple_music_link=apple_music_link).save()
-
+    """
     return Response("")
 
 

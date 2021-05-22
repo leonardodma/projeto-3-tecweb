@@ -56,3 +56,39 @@ body {
   border-color: #fff;
   transition: all 0.1s ease-in-out;
 }
+
+/* Recording button */
+
+button {
+	width: 20rem;
+	height: 20rem;
+	font-size: 0;
+	background-color: red;
+	border: 0;
+	border-radius: 10rem;
+	margin: 2rem;
+	outline: none;
+}
+
+.notRec{
+	background-color: darkred;
+}
+
+.Rec{
+	animation-name: pulse;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes pulse{
+	0%{
+		box-shadow: 0px 0px 2rem 0px rgba(173,0,0,.3);
+	}
+	65%{
+		box-shadow: 0px 0px 2rem 4rem rgba(173,0,0,.3);
+	}
+	90%{
+		box-shadow: 0px 0px 2rem 4rem rgba(173,0,0,0);
+	}
+}

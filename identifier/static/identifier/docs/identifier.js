@@ -60,3 +60,16 @@ function recordAudio() {
       }, 5000);
     });
 }
+
+
+document.querySelector('#record').classList.add("notRec")
+
+document.querySelector('#record').addEventListener("click", (e) => {
+  if (e.currentTarget.classList.contains("notRec")) {
+    //e.classList.remove("notRec");
+    e.currentTarget.classList.add("Rec");
+  }
+  else{
+    e.currentTarget.classList.add("notRec");
+  }
+})
