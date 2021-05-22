@@ -43,7 +43,7 @@ def api_identifier(request):
 def find_music(file):
     data = {
         'api_token': '328103c4a4afbc58d5001326e9ff66bf',
-        'return': 'apple_music,spotify',
+        'return': 'lyrics,apple_music,spotify,deezer',
     }
     files = {
         'file': file,
