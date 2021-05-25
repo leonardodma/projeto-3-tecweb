@@ -17,6 +17,7 @@ import requests
 def api_identifier(request):
     """
     if request.method == 'POST':
+        Musics.objects.all().delete()
         audio_query = request.data['audio-file']
         audio_blob = BytesIO(audio_query.read())
 
@@ -58,4 +59,13 @@ def index(request):
 
 
 def music(request):
-    return render(request, 'identifier/music.html')
+    logos = ['identifier/img/apple-music-logo.png', 'identifier/img/spotify-logo.png',
+             'identifier/img/deezer-logo.png','identifier/img/youtube-music-logo.png']
+    links = ["", "", "", ""]
+
+    data = {}
+    for i in range(len(logos)):
+        data[logos[i]] = links[i]
+
+
+    return render(request, 'identifier/music.html', {'data': data})

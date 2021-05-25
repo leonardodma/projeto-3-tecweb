@@ -14,7 +14,19 @@
           </div>
         </div>
         <div class="card__face card__face--back">
-          <h1>Teste</h1>
+          {% for key, value in data.items %}
+          <div class="service">
+            <a
+              href="{{value}}"
+            >
+              <img
+                src="{% static key %}"
+                style="display: inline-block"
+              />
+              <span>STREAM</span>
+            </a>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
