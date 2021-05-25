@@ -1,5 +1,6 @@
 from identifier.models import Musics
 from django.http import HttpResponse
+from googleapiclient.discovery import build
 import json
 
 # REST
@@ -96,11 +97,13 @@ def music(request):
     data = {}
     for i in range(len(logos)):
         data[logos[i]] = links[i]
-    
-    teste = api_view(request)
-    print(teste)
 
-    VIDEO_ID = 'jncduhbc'
-    src = f"http://www.youtube.com/embed/{VIDEO_ID}"
+    api_key = "AIzaSyBgjxsWxVrSLlq5ED02fV8k6jXNO3WVAc0"
+    youtube = build('youtube', 'v3', developerKey=api_key)
+    req = youtube.search().list(q=music.title, part='snippet', type='video')
+    video_id = req.execute()['items'][0]["id"]["videoId"]
+    print(video_id)
 
-    return render(request, 'identifier/music.html', {'data': data, 'music': music})
+    src = f"http://www.youtube.com/embed/{video_id}"
+
+    return render(request, 'identifier/music.html', {'data': data, 'music': music, 'src':src})
