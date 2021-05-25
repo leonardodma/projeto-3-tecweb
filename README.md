@@ -10,7 +10,7 @@ Identifique alguma música de interesse utilizando o microfone do seu navegador!
 * Rafael Seicali Malcervelli
 
 ## Planejamento 
-- [ ] Conseguir respostas coerentes da API do shazam
-- [ ] Conseguir, por meio da aplicação, gravar o áudio do usuário
-- [ ] Obter url do vídeo do youtube da música pesquisada
+- [x] Conseguir respostas coerentes da API do shazam
+- [x] Conseguir, por meio da aplicação, gravar o áudio do usuário
+- [x] Obter url do vídeo do youtube da música pesquisada
 - [ ] FrontEnd da aplicação
