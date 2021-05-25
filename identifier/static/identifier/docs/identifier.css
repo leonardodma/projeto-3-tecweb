@@ -3,7 +3,7 @@
 html,
 body {
   font-family: "Inter", sans-serif;
-  background-color: #eefbfb;
+  background-color: #212121;
   min-width: 75%;
 }
 
@@ -12,7 +12,6 @@ body {
   display: flex;
   flex-direction: row;
   box-shadow: 0 1px 24px 0 rgba(32, 32, 32, 0.75);
-  margin-bottom: 1rem;
   text-align: center;
   justify-content: space-around;
 }
@@ -36,94 +35,121 @@ body {
   justify-content: space-evenly;
 }
 
-.button {
-  width: 200px;
-  border-radius: 5px;
-  background-color: #4da8da;
-  border: solid 1px transparent;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.1s ease-in-out;
-  text-decoration: none;
-  text-align: center;
-  vertical-align: middle;
-  padding: 2rem;
-}
-
-.button:hover {
-  background-color: black;
-  border-color: #fff;
-  transition: all 0.1s ease-in-out;
-} 
-
-button {
-	width: 35px;
-	height: 35px;
-	font-size: 0;
-	background-color: red;
-	border: 0;
-	border-radius: 35px;
-	margin: 18px;
-	outline: none;
-}
-
-.notRec{
-	background-color: darkred;
-}
-
-.Rec{
-	animation-name: pulse;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-}
-
-@keyframes pulse{
-	0%{
-		box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
-	}
-	65%{
-		box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
-	}
-	90%{
-		box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
-	}
-}
-
 /* Recording button */
 
 button {
-	width: 20rem;
-	height: 20rem;
-	font-size: 0;
-	background-color: red;
-	border: 0;
-	border-radius: 10rem;
-	margin: 2rem;
-	outline: none;
+  width: 20rem;
+  height: 20rem;
+  font-size: 0;
+  background-color: #85eb7c;
+  border: 0;
+  border-radius: 10rem;
+  margin: 5rem;
+  outline: none;
 }
 
-.notRec{
-	background-color: darkred;
+.notRec {
+  background-color: #5fba56;
 }
 
-.Rec{
-	animation-name: pulse;
-	animation-duration: 1.5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+.Rec {
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-@keyframes pulse{
-	0%{
-		box-shadow: 0px 0px 2rem 0px rgba(173,0,0,.3);
-	}
-	65%{
-		box-shadow: 0px 0px 2rem 4rem rgba(173,0,0,.3);
-	}
-	90%{
-		box-shadow: 0px 0px 2rem 4rem rgba(173,0,0,0);
-	}
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 2rem 0px #174113;
+  }
+  65% {
+    box-shadow: 0px 0px 2rem 4rem #174113;
+  }
+  90% {
+    box-shadow: 0px 0px 2rem 4rem rgba(173, 0, 0, 0);
+  }
+}
+
+/* Music Card */
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.right-side {
+  display: grid;
+}
+
+.card-conteiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+
+.scene {
+  display: flex;
+  justify-content: space-between;
+  perspective: 800px;
+}
+
+.card {
+  position: relative;
+  width: 25rem;
+  height: 25rem;
+  color: white;
+  cursor: pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.music-text {
+  text-align: center;
+}
+
+.music-text h2 {
+  font-size: 2rem;
+}
+
+.music-text h3 {
+  font-size: 1rem;
+}
+
+.card:hover {
+  transform: rotateY(0.5turn);
+}
+
+.card__face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+  -webkit-box-reflect: below 0
+    linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.4));
+}
+
+.album-img {
+  width: 25rem;
+  height: 25rem;
+  object-fit: cover;
+}
+
+.card__face--back {
+  background-color: white;
+  transform: rotateY(0.5turn);
+}
+
+.video {
+  width: 560px;
+  height: 315px;
+  margin: 1rem;
+}
+
+.lyrics{
+  word-break: break-all;
 }

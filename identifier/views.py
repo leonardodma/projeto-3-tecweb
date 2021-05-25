@@ -55,3 +55,7 @@ def find_music(file):
 
 def index(request):
     return render(request, 'identifier/index.html')
+
+
+def music(request):
+    return render(request, 'identifier/music.html')

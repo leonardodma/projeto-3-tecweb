@@ -45,10 +45,11 @@ function recordAudio() {
       mediaRecorder.addEventListener("stop", () => {
         const audioBlob = new Blob(audioChunks, { type: "audio/mpeg-3" });
         console.log(audioBlob);
-        recordedAudio.src = URL.createObjectURL(audioBlob);
-        recordedAudio.controls = true;
-        recordedAudio.autoplay = true;
+        //recordedAudio.src = URL.createObjectURL(audioBlob);
+        //recordedAudio.controls = true;
+        //recordedAudio.autoplay = true;
         sendAudioFile(audioBlob);
+        window.location.href = "/music/";
 
         //audioBlob.arrayBuffer().then((arrayBuffer) => {
         //const sound = new Int16Array(arrayBuffer);

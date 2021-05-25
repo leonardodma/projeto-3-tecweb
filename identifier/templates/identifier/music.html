@@ -1,0 +1,41 @@
+{% extends "identifier/base.html" %} {% load static %} {% block content %}
+<div class="content">
+  <div class="card-conteiner">
+    <div class="scene">
+      <div class="card">
+        <div class="card__face card__face--front">
+          <img
+            class="album-img"
+            src="https://i.scdn.co/image/ab67616d0000b2731551c93dfa33ea4f30ef4eea"
+          />
+          <div class="music-text">
+            <h2>Warriors</h2>
+            <h3>Imagine Dragons</h3>
+          </div>
+        </div>
+        <div class="card__face card__face--back">
+          <h1>Teste</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right-side">
+    <iframe
+      class="video"
+      src="https://www.youtube.com/embed/fmI_Ndrxy14"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+    <h1>LYRICS</h1>
+    <div class="lyrics">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
+      praesentium omnis vero inventore aut accusantium pariatur rerum!
+      Asperiores et inventore assumenda accusantium voluptas, commodi
+      consequatur quibusdam pariatur ratione, officiis sed.
+    </div>
+  </div>
+</div>
+
+{% endblock %}

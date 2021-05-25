@@ -20,6 +20,7 @@ from identifier import views
 
 urlpatterns = [
     path('api/mp3/', views.api_identifier),
+    path('music/', views.music),
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
 ]
