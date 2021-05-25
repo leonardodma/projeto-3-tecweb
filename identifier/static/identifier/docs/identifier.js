@@ -49,7 +49,7 @@ function recordAudio() {
         //recordedAudio.controls = true;
         //recordedAudio.autoplay = true;
         sendAudioFile(audioBlob);
-        window.location.href = "/music/";
+        window.location.href = "/music/"
 
         //audioBlob.arrayBuffer().then((arrayBuffer) => {
         //const sound = new Int16Array(arrayBuffer);

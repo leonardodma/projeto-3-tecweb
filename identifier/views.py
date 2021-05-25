@@ -15,36 +15,64 @@ import requests
 
 @api_view(['GET', 'POST'])
 def api_identifier(request):
-    """
     if request.method == 'POST':
         Musics.objects.all().delete()
         audio_query = request.data['audio-file']
         audio_blob = BytesIO(audio_query.read())
 
-        response_json = find_music(audio_blob)['result']
-        s = json.dumps(response_json)
+        json_response = find_music(audio_blob)['result']
+        s = json.dumps(json_response)
         q = json.dumps(json.loads(s), indent=2)
         print(q)
 
-        artist = response_json['artist']
-        title = response_json['title']
-        album = response_json['album']
-        release_date = response_json['release_date']
-        genre = response_json['apple_music']['genreNames'][0]
-        album_picture = response_json['spotify']['album']['images'][0]['url']
-        spotify_link = response_json['spotify']['external_urls']['spotify']
-        apple_music_link = response_json['apple_music']['url']
+        try:
+            artist = json_response['artist']
+            title = json_response['title']
+            album = json_response['album']
+            release_date = json_response['release_date']
+            genre = json_response['apple_music']['genreNames'][0]
+            album_picture = json_response['spotify']['album']['images'][0]['url']
 
-        Musics(artist=artist, title=title, album=album, release_date=release_date, genre=genre,
-        album_picture=album_picture, spotify_link=spotify_link, apple_music_link=apple_music_link).save()
-    """
+            try:
+                spotify_link = json_response['spotify']['external_urls']['spotify']
+            except:
+                spotify_link = " "
+
+            try:
+                apple_music_link = json_response['apple_music']['url']
+            except:
+                apple_music_link = " "
+
+            try:
+                deezer_link = json_response['deezer']['link']
+            except:
+                deezer_link = " "
+            
+            try:
+                napster_link = json_response['napster']['href']
+            except:
+                napster_link = " "
+            
+            try:
+                lyrics = json_response['lyrics']['lyrics']
+            except:
+                lyrics = " "
+            
+        
+            Musics(artist=artist, title=title, album=album, release_date=release_date, genre=genre,
+            album_picture=album_picture, spotify_link=spotify_link, apple_music_link=apple_music_link,
+            deezer_link=deezer_link, napster_link=napster_link, lyrics=lyrics).save()
+
+        except:
+            pass
+    
     return Response("")
 
 
 def find_music(file):
     data = {
         'api_token': '328103c4a4afbc58d5001326e9ff66bf',
-        'return': 'lyrics,apple_music,spotify,deezer',
+        'return': 'apple_music,spotify,deezer,napster,lyrics',
     }
     files = {
         'file': file,
@@ -59,13 +87,20 @@ def index(request):
 
 
 def music(request):
-    logos = ['identifier/img/apple-music-logo.png', 'identifier/img/spotify-logo.png',
-             'identifier/img/deezer-logo.png','identifier/img/youtube-music-logo.png']
-    links = ["", "", "", ""]
+    music = Musics.objects.all()[0]
 
+    logos = ['identifier/img/apple-music-logo.png', 'identifier/img/spotify-logo.png',
+             'identifier/img/deezer-logo.png','identifier/img/napster-logo.png']
+
+    links = [music.apple_music_link, music.spotify_link, music.deezer_link, music.napster_link]
     data = {}
     for i in range(len(logos)):
         data[logos[i]] = links[i]
+    
+    teste = api_view(request)
+    print(teste)
 
+    VIDEO_ID = 'jncduhbc'
+    src = f"http://www.youtube.com/embed/{VIDEO_ID}"
 
-    return render(request, 'identifier/music.html', {'data': data})
+    return render(request, 'identifier/music.html', {'data': data, 'music': music})

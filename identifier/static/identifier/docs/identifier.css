@@ -111,7 +111,9 @@ button {
 }
 
 .music-text h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+
 }
 
 .music-text h3 {
@@ -216,4 +218,5 @@ button {
 .lyrics{
   word-break: break-all;
   color: white;
+  white-space: pre-wrap;
 }

@@ -9,10 +9,11 @@ class Musics(models.Model):
     release_date = models.CharField(max_length=200)
     genre = models.CharField(max_length=200)
     album_picture = models.CharField(max_length=200)
-    spotify_link = models.CharField(max_length=200)
-    apple_music_link = models.CharField(max_length=200)
+    spotify_link = models.CharField(max_length=250)
+    apple_music_link = models.CharField(max_length=250)
+    deezer_link = models.CharField(max_length=250)
+    napster_link = models.CharField(max_length=250)
     lyrics = models.TextField()
-    deezer = models.CharField(max_length=200)
 
     def __str__(self):
         return f'{self.title}({self.artist})'

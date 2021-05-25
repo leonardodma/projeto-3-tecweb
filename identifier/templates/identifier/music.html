@@ -6,11 +6,11 @@
         <div class="card__face card__face--front">
           <img
             class="album-img"
-            src="https://i.scdn.co/image/ab67616d0000b2731551c93dfa33ea4f30ef4eea"
+            src="{{music.album_picture}}"
           />
           <div class="music-text">
-            <h2>Warriors</h2>
-            <h3>Imagine Dragons</h3>
+            <h2>{{music.title}} - {{music.artist}}</h2>
+            <h3>{{music.album}} ({{music.release_date}})</h3>
           </div>
         </div>
         <div class="card__face card__face--back">
@@ -41,12 +41,7 @@
       allowfullscreen
     ></iframe>
     <h1>LYRICS</h1>
-    <div class="lyrics">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla
-      praesentium omnis vero inventore aut accusantium pariatur rerum!
-      Asperiores et inventore assumenda accusantium voluptas, commodi
-      consequatur quibusdam pariatur ratione, officiis sed.
-    </div>
+    <div class="lyrics">{{music.lyrics}}</div>
   </div>
 </div>
 
