@@ -114,6 +114,7 @@ def music(request, id):
     video_id = req.execute()['items'][0]["id"]["videoId"]
     print(video_id)
 
+    # Teste
     src = f"https://www.youtube.com/embed/{video_id}"
 
     return render(request, 'identifier/music.html', {'data': data, 'music': music, 'src':src})
