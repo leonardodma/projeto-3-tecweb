@@ -1,35 +1,33 @@
 {% extends "identifier/base.html" %} {% load static %} {% block content %}
-<div class="content">
-  <div class="card-conteiner">
-    <div class="scene">
-      <div class="card">
-        <div class="card__face card__face--front">
-          <img
-            class="album-img"
-            src="{{music.album_picture}}"
-          />
-          <div class="music-text">
-            <h2>{{music.title}} - {{music.artist}}</h2>
-            <h3>{{music.album}} ({{music.release_date}})</h3>
-          </div>
-        </div>
-        <div class="card__face card__face--back">
-          {% for key, value in data.items %}
-          <div class="service">
-            <a
-              href="{{value}}"
-            >
-              <img
-                src="{% static key %}"
-                style="display: inline-block"
-              />
-              <span>STREAM</span>
-            </a>
-          </div>
-          {% endfor %}
+<div class="card-conteiner">
+  <div class="scene">
+    <div class="card">
+      <div class="card__face card__face--front">
+        <img class="album-img" src="{{music.album_picture}}" />
+        <div class="music-text">
+          <h2>{{music.title}} - {{music.artist}}</h2>
+          <h3>{{music.album}} ({{music.release_date}})</h3>
         </div>
       </div>
+      <div class="card__face card__face--back">
+        {% for key, value in data.items %}
+        <div class="service">
+          <a href="{{value}}">
+            <img src="{% static key %}" style="display: inline-block" />
+            <span>STREAM</span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
+</div>
+<div class="content">
+  <div class="lyrics-conteiner">
+    <div class="lyrics-title">
+      <h1>Lyrics</h1>
+    </div>
+    <div class="lyrics">{{music.lyrics}}</div>
   </div>
   <div class="right-side">
     <iframe
@@ -40,9 +38,6 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
     ></iframe>
-    <h1>LYRICS</h1>
-    <div class="lyrics">{{music.lyrics}}</div>
   </div>
 </div>
-
 {% endblock %}

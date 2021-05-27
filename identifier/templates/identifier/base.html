@@ -4,17 +4,27 @@
   <head>
     <meta charset="UTF-8" />
     <title>Music Identifier</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'identifier/img/apple-touch-icon.png' %}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'identifier/img/favicon-32x32.png' %}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'identifier/img/favicon-16x16.png' %}" />
+    <link rel="manifest" href="{% static 'identifier/img/site.webmanifest' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
       integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'identifier/docs/identifier.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'identifier/docs/identifier.css' %}"
+    />
   </head>
   <body>
     <div class="appbar">
-      <img src="{% static 'identifier/img/logo_identifier.png' %}" class="logo" />
+      <img
+        src="{% static 'identifier/img/logo_identifier.png' %}"
+        class="logo"
+      />
       <span class="subtitle">Find the music you've aways wanted</span>
     </div>
     {% block content %} {% endblock %}
@@ -23,8 +33,8 @@
       src="{% static 'identifier/docs/identifier.js' %}"
     ></script>
     <script>
-        type="module"
-        src="{% static 'identifier/docs/soundModules.js' %}"
+      type = "module";
+      src = "{% static 'identifier/docs/soundModules.js' %}";
     </script>
     {% csrf_token %}
     <script>
