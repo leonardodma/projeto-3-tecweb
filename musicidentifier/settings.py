@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-hv+#z*plf-bxrqf^tg1zx(1!g%i75mwo_o74^8l)(dq00dwy0&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['music-finder-app.herokuapp.com', 'localhost', '127.0.0.1', '0.0.0.0']
 
