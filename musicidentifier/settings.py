@@ -79,22 +79,18 @@ WSGI_APPLICATION = 'musicidentifier.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 # Local
+
 """
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'musicfinder',
-        'USER': 'musicfinderuser',
-        'PASSWORD': 'fl1pfl0p',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 """
 
 
 # Aplicação Web
-
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://localhost/getit?user=getituser&password=getitsenha',

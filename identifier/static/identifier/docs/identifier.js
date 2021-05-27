@@ -25,8 +25,7 @@ const sendAudioFile = (file) => {
     method: "POST",
     headers: { "X-CSRFToken": csrftoken },
     body: formData,
-  })
-    .then((response) => response.json());
+  }).then((response) => response.json());
 };
 
 // https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
@@ -46,9 +45,14 @@ function recordAudio() {
       mediaRecorder.addEventListener("stop", () => {
         const audioBlob = new Blob(audioChunks, { type: "audio/mpeg-3" });
         console.log(audioBlob);
-        sendAudioFile(audioBlob).then(
-          (ID) => (window.location.href = `/music/${ID}`)
-        );
+        sendAudioFile(audioBlob).then((ID) => {
+          console.log(ID);
+          if (ID === "") {
+            window.location.href = "/error/";
+          } else {
+            window.location.href = `/music/${ID}`;
+          }
+        });
       });
 
       setTimeout(() => {

@@ -22,5 +22,6 @@ urlpatterns = [
     path('api/mp3/', views.api_identifier),
     path('music/<int:id>', views.music),
     path('admin/', admin.site.urls),
+    path('error/', views.error),
     path('', views.index, name='index'),
 ]
