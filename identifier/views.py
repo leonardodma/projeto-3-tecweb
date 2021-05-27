@@ -77,7 +77,6 @@ def api_identifier(request):
 
     return Response(music.id)
 
-
     #return Response("")
 
 
@@ -111,24 +110,10 @@ def music(request, id):
 
     api_key = "AIzaSyBgjxsWxVrSLlq5ED02fV8k6jXNO3WVAc0"
     youtube = build('youtube', 'v3', developerKey=api_key)
-    req = youtube.search().list(q=music.title, part='snippet', type='video')
+    req = youtube.search().list(q=f"{music.title} {music.artist}", part='snippet', type='video')
     video_id = req.execute()['items'][0]["id"]["videoId"]
     print(video_id)
 
     src = f"http://www.youtube.com/embed/{video_id}"
 
     return render(request, 'identifier/music.html', {'data': data, 'music': music, 'src':src})
-
-
-
-
-
-"""
-CREATE DATABASE musicfinder;
-CREATE USER musicfinderuser WITH PASSWORD 'fl1pfl0p';
-ALTER ROLE musicfinderuser SET client_encoding TO 'utf8';
-ALTER ROLE musicfinderuser SET default_transaction_isolation TO 'read committed';
-ALTER ROLE musicfinderuser SET timezone TO 'UTC';
-GRANT ALL PRIVILEGES ON DATABASE musicfinder TO musicfinderuser;
-\q
-"""
