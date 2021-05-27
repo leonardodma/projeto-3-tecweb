@@ -24,7 +24,7 @@ def api_identifier(request):
     json_response = find_music(audio_blob)['result']
     s = json.dumps(json_response)
     q = json.dumps(json.loads(s), indent=2)
-    print(q)
+    #print(q)
 
 
     artist = json_response['artist']
@@ -118,3 +118,17 @@ def music(request, id):
     src = f"http://www.youtube.com/embed/{video_id}"
 
     return render(request, 'identifier/music.html', {'data': data, 'music': music, 'src':src})
+
+
+
+
+
+"""
+CREATE DATABASE musicfinder;
+CREATE USER musicfinderuser WITH PASSWORD 'fl1pfl0p';
+ALTER ROLE musicfinderuser SET client_encoding TO 'utf8';
+ALTER ROLE musicfinderuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE musicfinderuser SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE musicfinder TO musicfinderuser;
+\q
+"""
