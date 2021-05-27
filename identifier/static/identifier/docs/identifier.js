@@ -23,9 +23,10 @@ const sendAudioFile = (file) => {
   formData.append("audio-file", file);
   return fetch("/api/mp3/", {
     method: "POST",
-    headers: {"X-CSRFToken": csrftoken },
+    headers: { "X-CSRFToken": csrftoken },
     body: formData,
-  });
+  })
+    .then((response) => response.json());
 };
 
 // https://medium.com/@bryanjenningz/how-to-record-and-play-audio-in-javascript-faa1b2b3e49b
@@ -45,16 +46,9 @@ function recordAudio() {
       mediaRecorder.addEventListener("stop", () => {
         const audioBlob = new Blob(audioChunks, { type: "audio/mpeg-3" });
         console.log(audioBlob);
-        //recordedAudio.src = URL.createObjectURL(audioBlob);
-        //recordedAudio.controls = true;
-        //recordedAudio.autoplay = true;
-        sendAudioFile(audioBlob);
-        window.location.href = "/music/"
-
-        //audioBlob.arrayBuffer().then((arrayBuffer) => {
-        //const sound = new Int16Array(arrayBuffer);
-        //console.log(sound);
-        //});
+        sendAudioFile(audioBlob).then(
+          (ID) => (window.location.href = `/music/${ID}`)
+        );
       });
 
       setTimeout(() => {
@@ -63,15 +57,13 @@ function recordAudio() {
     });
 }
 
+document.querySelector("#record").classList.add("notRec");
 
-document.querySelector('#record').classList.add("notRec")
-
-document.querySelector('#record').addEventListener("click", (e) => {
+document.querySelector("#record").addEventListener("click", (e) => {
   if (e.currentTarget.classList.contains("notRec")) {
     //e.classList.remove("notRec");
     e.currentTarget.classList.add("Rec");
-  }
-  else{
+  } else {
     e.currentTarget.classList.add("notRec");
   }
-})
+});
