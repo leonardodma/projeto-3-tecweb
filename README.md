@@ -10,7 +10,8 @@ Identifique alguma música de interesse utilizando o microfone do seu navegador!
 * Rafael Seicali Malcervelli
 
 ## Planejamento 
-- [x] Conseguir respostas coerentes da API do shazam
-- [x] Conseguir, por meio da aplicação, gravar o áudio do usuário
-- [x] Obter url do vídeo do youtube da música pesquisada
-- [ ] FrontEnd da aplicação
+- [x] Conseguir respostas coerentes da API da AudD (2 dias)
+- [x] Conseguir, por meio da aplicação, gravar o áudio do usuário (3 dias)
+- [x] Obter url do vídeo do youtube da música pesquisada (2 dias)
+- [X] FrontEnd da aplicação (1 semana)
+- [X] Correção de erros e Deploy (2 dia)
