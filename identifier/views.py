@@ -26,7 +26,7 @@ def api_identifier(request):
         json_response = find_music(audio_blob)['result']
         s = json.dumps(json_response)
         q = json.dumps(json.loads(s), indent=2)
-        #print(q)
+        print(q)
 
 
         artist = json_response['artist']
@@ -86,7 +86,7 @@ def api_identifier(request):
 
 def find_music(file):
     data = {
-        'api_token': '328103c4a4afbc58d5001326e9ff66bf',
+        'api_token': 'fc953cfa6f12a3bcae3a224fd86011ca',
         'return': 'apple_music,spotify,deezer,napster,lyrics',
     }
     files = {
