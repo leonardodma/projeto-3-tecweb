@@ -70,3 +70,15 @@ document.querySelector("#record").addEventListener("click", (e) => {
     e.currentTarget.classList.add("notRec");
   }
 });
+
+
+
+
+function hideLyrics() {
+  var x = document.getElementById("lyrics");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

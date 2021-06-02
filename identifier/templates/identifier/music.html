@@ -24,10 +24,10 @@
 </div>
 <div class="content">
   <div class="lyrics-conteiner">
-    <div class="lyrics-title">
-      <h1>Lyrics</h1>
+    <div class="lyrics-title" onclick="hideLyrics()">
+      <h1>Show Lyrics</h1>
     </div>
-    <div class="lyrics">{{music.lyrics}}</div>
+    <div class="lyrics" id="lyrics">{{music.lyrics}}</div>
   </div>
   <div class="right-side">
     <iframe
