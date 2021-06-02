@@ -65,7 +65,7 @@ def api_identifier(request):
         try:
             lyrics = json_response['lyrics']['lyrics']
         except:
-            lyrics = " "
+            lyrics = "Não existe Lyrics para essa música"
         
 
         music = Musics(artist=artist, title=title, album=album, release_date=release_date, genre=genre,

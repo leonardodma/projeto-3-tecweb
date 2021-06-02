@@ -15,6 +15,7 @@ body {
   box-shadow: 0 1px 24px 0 rgba(32, 32, 32, 0.75);
   text-align: center;
   justify-content: space-around;
+  width: 100%;
 }
 
 .logo {
@@ -35,17 +36,18 @@ body {
   align-items: center;
   margin: 1rem;
   justify-content: space-evenly;
+  height: 80vh;
 }
 
 /* Recording button */
 
 button {
-  width: 20rem;
-  height: 20rem;
+  width: 50vh;
+  height: 50vh;
   font-size: 0;
   background-color: #f8c96c;
   border: 0;
-  border-radius: 10rem;
+  border-radius: 40vh;
   margin: 5rem;
   outline: none;
 }
@@ -216,6 +218,7 @@ button {
   width: 50%;
   min-width: 20rem;
   margin-right: 1rem;
+  cursor: pointer;
 }
 
 .lyrics-conteiner .lyrics-title{
@@ -224,6 +227,10 @@ button {
   background-color: #f7b839;
   border-radius: 1rem;  
   height: 2rem;
+}
+
+.lyrics-conteiner .lyrics-title:hover{
+  background-color: #f8c96c;
 }
 
 .lyrics-conteiner .lyrics-title h1{
@@ -240,6 +247,7 @@ button {
   white-space: pre-wrap;
   text-align: left;
   margin-top: 1rem;
+  display: none;
 }
 
 .error-message{
