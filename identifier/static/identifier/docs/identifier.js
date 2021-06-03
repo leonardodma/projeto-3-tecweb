@@ -71,14 +71,18 @@ document.querySelector("#record").addEventListener("click", (e) => {
   }
 });
 
-
-
-
 function hideLyrics() {
   var x = document.getElementById("lyrics");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
+  var h1 = document.getElementById("h1-lyrics");
+
+  if (x.classList.contains('lyrics-hided')){
+    h1.innerText = "Hide Lyrics";
+    x.classList.remove("lyrics-hided");
+    x.classList.add("lyrics");
+  }
+  else{
+    h1.innerText = "Show Lyrics";
+    x.classList.remove("lyrics");
+    x.classList.add("lyrics-hided");
   }
 }
