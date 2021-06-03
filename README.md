@@ -34,10 +34,12 @@ Identifique alguma música de interesse utilizando o microfone do seu navegador!
 * Mudar para a branch de teste local: `$ git chekout testeLocal`
 * Na raiz do projeto, executar: 
 
-1) `$ . env/bin/activate`, para ativar o ambiente virtual;
+1) `$ python3 -m venv NOME_DA_PASTA_DO_VENV`, para criar ambiente virtual em python3;
 
-2) `$ pip install -r requirements.txt`, para instalar pacotes necessários;
+2) `$ . NOME_DA_PASTA_DO_VENV/bin/activate`, para ativar o ambiente virtual;
 
-3) `$ python manage.py migrate` e `$ python manage.py makemigrations`, para fazer migrações do banco de dados;
+3) `$ pip install -r requirements.txt`, para instalar pacotes necessários;
 
-4) `$ python manage.py runserver`, para iniciar a aplicação localmente em <http://127.0.0.1:8000/>
+4) `$ python manage.py migrate`, para fazer migrações do banco de dados;
+
+5) `$ python manage.py runserver`, para iniciar a aplicação localmente em <http://127.0.0.1:8000/>
