@@ -2,6 +2,7 @@ from identifier.models import Musics
 from django.http import HttpResponse
 from googleapiclient.discovery import build
 import json
+import datetime
 
 # REST
 from rest_framework.decorators import api_view
@@ -32,7 +33,9 @@ def api_identifier(request):
         artist = json_response['artist']
         title = json_response['title']
         album = json_response['album']
-        release_date = json_response['release_date']
+        release_date_raw = json_response['release_date']
+        release_date = datetime.datetime.strptime(release_date_raw, "%Y-%m-%d").strftime("%d/%m/%Y")
+
 
         try:
             genre = json_response['apple_music']['genreNames'][0]
@@ -86,7 +89,7 @@ def api_identifier(request):
 
 def find_music(file):
     data = {
-        'api_token': 'fc953cfa6f12a3bcae3a224fd86011ca',
+        'api_token': 'c4a32f1410b9f9827d6807a4eb200007',
         'return': 'apple_music,spotify,deezer,napster,lyrics',
     }
     files = {
