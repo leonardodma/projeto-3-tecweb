@@ -1,6 +1,9 @@
 # Music Identifier
+Print da página inicial do site
 ![plot](https://github.com/leonardodma/projeto-3-tecweb/blob/main/printScreenSite/homeSite.PNG)
-![Print de um exemplo de música identificada](https://github.com/leonardodma/projeto-3-tecweb/blob/main/printScreenSite/musicSite.png?raw=true)
+
+Print de uma música exemplo encontrada
+![plot](https://github.com/leonardodma/projeto-3-tecweb/blob/main/printScreenSite/musicSite.PNG)
 
 ## Integrantes
 
