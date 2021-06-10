@@ -36,7 +36,7 @@ Identifique alguma música de interesse utilizando o microfone do seu navegador!
 ## Executar a aplicação localmente
 
 * Clonar o repositório
-* Mudar para a branch de teste local: `$ git chekout testeLocal`
+* Mudar para a branch de teste local: `$ git checkout testeLocal`
 * Na raiz do projeto, executar: 
 
 1) `$ python3 -m venv NOME_DA_PASTA_DO_VENV`, para criar ambiente virtual em python3;
