@@ -19,7 +19,7 @@ body {
 }
 
 .logo {
-  width: 15%;
+  width: 70%;
   margin: 1rem;
 }
 
@@ -50,6 +50,7 @@ button {
   border-radius: 40vh;
   margin: 5rem;
   outline: none;
+  cursor: pointer;
 }
 
 .notRec {
