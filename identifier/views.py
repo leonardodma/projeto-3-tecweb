@@ -20,16 +20,20 @@ def api_identifier(request):
     if Musics.objects.all().count() > 100:
         Musics.objects.all().delete()
     
+    
+    audio_query = request.data['audio-file']
+    audio_blob = BytesIO(audio_query.read())
+
     try:
-        audio_query = request.data['audio-file']
-        audio_blob = BytesIO(audio_query.read())
-
         json_response = find_music(audio_blob)['result']
-        s = json.dumps(json_response)
-        q = json.dumps(json.loads(s), indent=2)
-        print(q)
+    except:
+        json_response = find_music(audio_blob)
 
+    s = json.dumps(json_response)
+    q = json.dumps(json.loads(s), indent=2)
+    print(q)
 
+    try:
         artist = json_response['artist']
         title = json_response['title']
         album = json_response['album']
@@ -66,7 +70,7 @@ def api_identifier(request):
             napster_link = " "
         
         try:
-            lyrics = json_response['lyrics']['lyrics']
+            lyrics = json_response['lyrics']['lyrics'].encode('utf8').decode('utf8')
         except:
             lyrics = "Não existe Lyrics para essa música"
         
@@ -89,7 +93,7 @@ def api_identifier(request):
 
 def find_music(file):
     data = {
-        'api_token': 'c4a32f1410b9f9827d6807a4eb200007',
+        'api_token': '85aaaef806505f7e6bcb5f552b24a936',
         'return': 'apple_music,spotify,deezer,napster,lyrics',
     }
     files = {
