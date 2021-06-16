@@ -216,6 +216,7 @@ button {
 
 .lyrics-conteiner{
   width: 50%;
+  height: 315px;
   min-width: 20rem;
   margin-right: 1rem;
   cursor: pointer;
@@ -251,6 +252,8 @@ button {
   text-align: left;
   margin-top: 1rem;
   transition: all 1s linear;
+  height: 270px;
+  overflow-y:scroll;
 }
 
 .lyrics-hided{
